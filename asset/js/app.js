@@ -8,7 +8,8 @@ const app = new Vue(
                 "Fare il bucato"
             ]
         },
-        method: {}
+        method: {
+        }
 
 
 
