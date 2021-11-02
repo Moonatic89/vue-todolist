@@ -40,11 +40,12 @@ header>img {
 
 .taskList {
     background-color: #f5f7f7;
-    width: 25%;
+    width: 40%;
     margin: auto;
     padding: 2rem 3rem;
     border-radius: 10px;
     font-size: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .taskGroup>h3 {
@@ -65,4 +66,19 @@ header>img {
 
 .btns {
     display: flex;
+}
+
+.sideTasks {
+    display: flex;
+    width: 40%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.completedTasks, .erasedTasks {
+    background-color: #f7f7f7;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 45%;
 }

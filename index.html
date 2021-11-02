@@ -73,24 +73,45 @@
 
             </div>
 
+            <div class="sideTasks">
 
+                <div class="completedTasks">
 
-            <div class="completedTasks">
+                    <h3>Completed Task</h3>
 
-                <div class="taskList" v-if="completedTasks.length> 0">
+                    <div class="completedList" v-if="completedTasks.length> 0">
+                        <div class="item" v-for="(completed, index) in
+                            completedTasks">
+                            {{completed}}
+                        </div>
 
-                    <div class="item" v-for="(completed, index) in
-                        completedTasks">
-                        {{completed}}
                     </div>
 
+                    <div v-else>
+                        <span>No task completed! Do something, you lazy nerd!</span>
+                    </div>
                 </div>
 
-                <div v-else>
-                    <span>No task completed! Do something, you lazy nerd!</span>
+
+                <div class="erasedTasks">
+                    <h3>Erased Task</h3>
+
+                    <div class="erasedList" v-if="erasedTasks.length> 0">
+
+                        <div class="item" v-for="(erased, index) in
+                            erasedTasks">
+                            {{erased}}
+                        </div>
+
+                    </div>
+
+                    <div v-else>
+                        <span>You have no erased task, good!</span>
+                    </div>
                 </div>
+
+
             </div>
-
 
         </main>
 

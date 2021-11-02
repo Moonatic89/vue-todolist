@@ -10,14 +10,16 @@ const app = new Vue(
                 "Fare il bucato"
             ],
             completedTasks: [
+            ],
+            erasedTasks: [
             ]
         },
         methods: {
             removeTask(index) {
+                this.erasedTasks.push(this.tasks[index]);
                 this.tasks.splice(index, 1)
             },
             completeTask(index) {
-                console.log(this.tasks[index])
                 this.completedTasks.push(this.tasks[index]);
                 this.tasks.splice(index, 1)
 
