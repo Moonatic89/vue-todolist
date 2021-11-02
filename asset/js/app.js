@@ -8,11 +8,19 @@ const app = new Vue(
                 "Fare i compiti",
                 "Fare la spesa",
                 "Fare il bucato"
+            ],
+            completedTasks: [
             ]
         },
         methods: {
             removeTask(index) {
                 this.tasks.splice(index, 1)
+            },
+            completeTask(index) {
+                console.log(this.tasks[index])
+                this.completedTasks.push(this.tasks[index]);
+                this.tasks.splice(index, 1)
+
             },
             addNewTask() {
                 if (this.newTask != "" && this.newTask.length > 5) {
