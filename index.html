@@ -18,12 +18,11 @@
         <main id="app">
             <div class="tasks">
 
-                <div class="item" v-for="task in tasks">
+                <div class="item" v-for="(task, index) in tasks">
                     {{task}}
                     <div class="removeBtn">
-
                         <!-- I'm not so convinced about using an "a href" tag  -->
-                        <a href="#">
+                        <a href="#" @click="removeTask(index)">
                             <i class="fa fa-times-circle"
                                 aria-hidden="true"></i>
                         </a>
