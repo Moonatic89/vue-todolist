@@ -17,25 +17,33 @@
 
         <main id="app">
 
-            <div class="tasks">
+            <div class="controls">
 
                 <div class="addTask">
-                    <input type="text" v-model="newTask"
-                        v-on:keyup.enter="addNewTask">
-                    <button @click="addNewTask">Add</button>
-                    <h2 v-if="errorCheck">Please enter a Task and then press Add
-                        or
-                        Enter!</h2>
-                    <h2 v-else>Please enter a VALID Task (at least 5 characters
-                        and
-                        not empty)</h2>
+                    <div class="formGroup">
+                        <input type="text" v-model="newTask"
+                            v-on:keyup.enter="addNewTask">
+                        <button @click="addNewTask">Add</button>
+                    </div>
+
+                    <div class="taskCheck">
+                        <h2 v-if="errorCheck">Please enter a Task and then press
+                            Add or Enter!</h2>
+                        <h2 v-else>Please enter a VALID Task (at least 5
+                            characters and not empty)</h2>
+                    </div>
                 </div>
 
+            </div>
 
-                <div class="taskList" v-if="tasks.length> 0">
 
-                    <div class="item" v-for="(task, index) in tasks">
-                        {{task}}
+            <div class="taskList" v-if="tasks.length> 0">
+                <h3>Task List</h3>
+
+                <div class="item" v-for="(task, index) in tasks">
+                    {{task}}
+
+                    <div class="btns">
                         <div class="completeBtn">
                             <a href="#" @click="completeTask(index)">
                                 <i class="fa fa-check-circle"
@@ -49,13 +57,14 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
 
-                <div v-else>
-                    <span>Nothing to do! Enjoy!</span>
-                </div>
             </div>
+
+            <div v-else>
+                <span>Nothing to do! Enjoy!</span>
+            </div>
+
 
             <div class="completedTasks">
 
