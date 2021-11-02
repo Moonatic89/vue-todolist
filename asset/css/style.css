@@ -31,13 +31,11 @@ header>img {
     background-color: #efefef;
     padding: .5rem 2rem;
     border-radius: 10px;
-    box-shadow: none;
 }
 
 .formGroup input {
     width: 300px;
     border-radius: 10px;
-    box-shadow: none;
 }
 
 .taskList {
@@ -49,14 +47,14 @@ header>img {
     font-size: 1.5rem;
 }
 
-.taskList>h3 {
+.taskGroup>h3 {
     margin-bottom: 2rem;
 }
 
 .item {
+    border-bottom: 1px solid lightgrey;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid lightgrey;
     margin-bottom: .5rem;
 }
 

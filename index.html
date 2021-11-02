@@ -36,34 +36,43 @@
 
             </div>
 
-
-            <div class="taskList" v-if="tasks.length> 0">
+            <div class="taskList">
                 <h3>Task List</h3>
 
-                <div class="item" v-for="(task, index) in tasks">
-                    {{task}}
 
-                    <div class="btns">
-                        <div class="completeBtn">
-                            <a href="#" @click="completeTask(index)">
-                                <i class="fa fa-check-circle"
-                                    aria-hidden="true"></i></a>
+                <div class="taskGroup" v-if="tasks.length> 0">
+
+                    <div class="item" v-for="(task, index) in tasks">
+                        {{task}}
+
+                        <div class="btns">
+
+                            <div class="completeBtn">
+                                <a href="#" @click="completeTask(index)">
+                                    <i class="fa fa-check-circle"
+                                        aria-hidden="true"></i></a>
+                            </div>
+
+                            <div class="removeBtn">
+                                <!-- I'm not so convinced a</div>bout using an "a href" tag  -->
+                                <a href="#" @click="removeTask(index)">
+                                    <i class="fa fa-times-circle"
+                                        aria-hidden="true"></i>
+                                </a>
+                            </div>
+
                         </div>
-                        <div class="removeBtn">
-                            <!-- I'm not so convinced a</div>bout using an "a href" tag  -->
-                            <a href="#" @click="removeTask(index)">
-                                <i class="fa fa-times-circle"
-                                    aria-hidden="true"></i>
-                            </a>
-                        </div>
+
                     </div>
+
+                </div>
+
+                <div v-else>
+                    <span>Nothing to do! Enjoy!</span>
                 </div>
 
             </div>
 
-            <div v-else>
-                <span>Nothing to do! Enjoy!</span>
-            </div>
 
 
             <div class="completedTasks">
