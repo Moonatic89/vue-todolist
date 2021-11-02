@@ -17,28 +17,34 @@
 
         <main id="app">
 
-
             <div class="addTask">
                 <input type="text" v-model="newTask"
                     v-on:keyup.enter="addNewTask">
                 <button @click="addNewTask">Add</button>
+                <h2 v-if="errorCheck">Please enter a Task and then press Add or
+                    Enter!</h2>
+                <h2 v-else>Please enter a VALID Task (at least 5 characters and
+                    not empty)</h2>
             </div>
 
-            <div class="tasks">
+            <!-- <div class="tasks" v-if="tasks.length> 0"> -->
 
-                <div class="item" v-for="(task, index) in tasks">
-                    {{task}}
-                    <div class="removeBtn">
-                        <!-- I'm not so convinced about using an "a href" tag  -->
-                        <a href="#" @click="removeTask(index)">
-                            <i class="fa fa-times-circle"
-                                aria-hidden="true"></i>
-                        </a>
-                    </div>
+            <div class="item" v-for="(task, index) in tasks">
+                {{task}}
+                <div class="removeBtn">
+                    <!-- I'm not so convinced a</div>bout using an "a href" tag  -->
+                    <a href="#" @click="removeTask(index)">
+                        <i class="fa fa-times-circle"
+                            aria-hidden="true"></i>
+                    </a>
                 </div>
-
             </div>
 
+            <!-- </div> -->
+
+            <!-- <div v-else>
+                <span>Nothing to do! Enjoy!</span>
+            </div> -->
         </main>
 
 

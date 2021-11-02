@@ -3,6 +3,7 @@ const app = new Vue(
         el: "#app",
         data: {
             newTask: "",
+            errorCheck: true,
             tasks: [
                 "Fare i compiti",
                 "Fare la spesa",
@@ -14,14 +15,14 @@ const app = new Vue(
                 this.tasks.splice(index, 1)
             },
             addNewTask() {
-                this.tasks.push(this.newTask);
-                this.newTask = "";
+                if (this.newTask != "" && this.newTask.length > 5) {
+                    this.tasks.push(this.newTask);
+                    this.newTask = "";
+                    this.errorCheck = true;
+                } else {
+                    this.errorCheck = false;
+
+                }
             }
         }
-
-
-
-
-
-
     })
