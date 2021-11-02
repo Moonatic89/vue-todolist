@@ -16,6 +16,14 @@
         </header>
 
         <main id="app">
+
+
+            <div class="addTask">
+                <input type="text" v-model="newTask"
+                    v-on:keyup.enter="addNewTask">
+                <button @click="addNewTask">Add</button>
+            </div>
+
             <div class="tasks">
 
                 <div class="item" v-for="(task, index) in tasks">
@@ -28,6 +36,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
 
         </main>
